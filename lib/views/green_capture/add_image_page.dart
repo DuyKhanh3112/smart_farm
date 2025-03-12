@@ -11,7 +11,26 @@ class AddImageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     AddImageController addImageController = Get.put(AddImageController());
     return Scaffold(
-      appBar: AppBar(title: const Text("Thêm ảnh")),
+      appBar: AppBar(
+        title: Text(
+          'Thêm hình ảnh',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        foregroundColor: Colors.white,
+        centerTitle: true,
+        flexibleSpace: Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/bg_appbar.png'),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: const _Body(),
       floatingActionButton: FloatingActionButton(
         onPressed: () async => await addImageController.addImage(),

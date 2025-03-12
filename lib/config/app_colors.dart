@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 class AppColors {
@@ -27,7 +29,6 @@ class AppColors {
   static Color primaryText = const Color(0xFF4F6F52);
   static Color secondaryText = const Color(0xFF739072);
   static Color hintText = const Color(0xFFD2E3C8);
-
 
   // blur color
   static Color blurColor(Color color, double opacity) {

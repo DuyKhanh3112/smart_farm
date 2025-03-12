@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/controller/green_capture/home_controller.dart';
-import 'package:smart_farm/controller/green_capture/image_management_controller.dart';
+import 'package:smart_farm/controller/conversation_controller.dart';
 import 'package:smart_farm/controller/main_controller.dart';
-import 'package:smart_farm/utils/tool.dart';
-import 'package:smart_farm/widgets/dialog/dialog_filter.dart';
-import 'package:smart_farm/widgets/drawer.dart';
-import 'package:smart_farm/widgets/progress.dart';
+import 'package:smart_farm/objs/conversation.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -14,12 +10,10 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(MainController());
-    Get.put(HomeController());
-    Get.put(ImageManagementController());
-    ImageManagementController imageManagementController =
-        Get.find<ImageManagementController>();
+    Get.put(ConversationController());
     MainController mainController = Get.find<MainController>();
-    HomeController homeController = Get.find<HomeController>();
+    ConversationController conversationController =
+        Get.find<ConversationController>();
 
     return Obx(() {
       // bool hasInternet = homeController.hasInternet.value;
@@ -79,16 +73,12 @@ class MainPage extends StatelessWidget {
       // );
       return Scaffold(
         appBar: AppBar(
-          title: Container(
-            alignment: Alignment.center,
-            child: Text(
-              mainController.titles[mainController.numPage.value],
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+          title: Text(
+            mainController.titles[mainController.numPage.value],
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
+          foregroundColor: Colors.white,
+          centerTitle: true,
           flexibleSpace: Stack(
             children: [
               Container(
@@ -101,15 +91,52 @@ class MainPage extends StatelessWidget {
               ),
             ],
           ),
+          actions:
+              mainController.numPage.value == 4
+                  ? [
+                    PopupMenuButton(
+                      icon: Icon(Icons.more_vert),
+                      onSelected: (String value) {
+                        if (value == 'refresh') {
+                          conversationController.conversations.value =
+                              <Conversation>[];
+                          conversationController.isLoading.value = false;
+                          conversationController
+                              .currentConver
+                              .value = Conversation(
+                            created_at: DateTime.now(),
+                            question: '',
+                            answer: '',
+                          );
+                        }
+                      },
+                      itemBuilder:
+                          (BuildContext context) => <PopupMenuEntry<String>>[
+                            PopupMenuItem<String>(
+                              value: "refresh",
+                              child: ListTile(
+                                leading: Icon(
+                                  Icons.refresh,
+                                  color: Colors.green,
+                                ),
+                                title: Text("Làm mới"),
+                              ),
+                            ),
+                          ],
+                    ),
+                  ]
+                  :[
+            
+          ],
         ),
         body: mainController.pages[mainController.numPage.value],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: mainController.numPage.value,
           showSelectedLabels: true,
           showUnselectedLabels: true,
-          selectedIconTheme: IconThemeData(color: Colors.green, size: 28),
+          // selectedIconTheme: IconThemeData(color: Colors.green, size: 28),
           selectedItemColor: Colors.green,
-          unselectedIconTheme: IconThemeData(color: Colors.grey, size: 20),
+          // unselectedIconTheme: IconThemeData(color: Colors.grey, size: 20),
           unselectedItemColor: Colors.grey,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Trang chủ'),
@@ -117,18 +144,24 @@ class MainPage extends StatelessWidget {
             BottomNavigationBarItem(
               // icon: Icon(Icons.photo_camera_back_rounded, size: 30),
               icon: Container(
-                // width: Get.width * 0.1,
-                // height: Get.width * 0.1,
+                width: Get.width * 0.2,
+                height: Get.width * 0.2,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.green,
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/scan_image.png'),
+
+                    fit: BoxFit.fill,
+                  ),
                 ),
+
                 padding: EdgeInsets.all(10),
-                child: Icon(
-                  Icons.photo_camera_back_rounded,
-                  color: Colors.white,
-                  size: 30,
-                ),
+                // child: Icon(
+                //   Icons.photo_camera_back_rounded,
+                //   color: Colors.white,
+                //   size: 30,
+                // ),
               ),
               label: '',
             ),

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:smart_farm/objs/conversation.dart';
 import 'package:smart_farm/objs/image_detect.dart';
 import 'package:smart_farm/views/ai_page.dart';
 import 'package:smart_farm/views/data_page.dart';
-import 'package:smart_farm/views/green_capture/green_capture_page.dart';
-import 'package:smart_farm/views/green_capture/image_management_screen.dart';
 import 'package:smart_farm/views/home_page.dart';
 import 'package:smart_farm/views/newspaper_page.dart';
 import 'package:smart_farm/views/smart_farm/picture_page.dart';
@@ -36,4 +35,6 @@ class MainController extends GetxController {
     'Hỏi AI',
   ];
   RxInt numPage = 0.obs;
+
+  RxList<Conversation> conversations = <Conversation>[].obs;
 }

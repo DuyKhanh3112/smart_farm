@@ -1,25 +1,119 @@
+// ignore_for_file: invalid_use_of_protected_member, sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_farm/objs/image.dart';
 import 'package:smart_farm/objs/plant.dart';
 import 'package:smart_farm/controller/green_capture/home_controller.dart';
 import 'package:smart_farm/utils/config.dart';
+import 'package:smart_farm/utils/tool.dart';
 import 'package:smart_farm/widgets/dialog/dialog_filter.dart';
 import 'package:smart_farm/widgets/progress.dart';
-import 'package:smart_farm/widgets/widgets.dart';
 import 'package:intl/intl.dart';
 
 class ManagementImageScreen extends StatelessWidget {
   const ManagementImageScreen({super.key});
 
+  void loadData(
+    RxList<Plant> plants,
+    HomeController homeController,
+    Rx<TextEditingController> searchController,
+    RxList<PlantType> plantTypes,
+    RxList<PlantCondition> plantConditions,
+    RxList<Rx<ImageDetail>> items,
+  ) {
+    plants.value =
+        homeController.plantViews
+            .where(
+              (item) =>
+                  searchController.value.text.isEmpty ||
+                  searchController.value.text.removeAllWhitespace == '' ||
+                  Tool.removeDiacritics(item.name.toLowerCase()).contains(
+                    Tool.removeDiacritics(
+                      searchController.value.text.toLowerCase(),
+                    ),
+                  ),
+              //  ||
+              // Tool.removeDiacritics(
+              //   item.desciption!.toLowerCase(),
+              // ).contains(
+              //   Tool.removeDiacritics(
+              //     searchController.value.text.toLowerCase(),
+              //   ),
+              // ),
+            )
+            .toList();
+
+    plantTypes.value =
+        homeController.plantTypeViews
+            .where(
+              (item) =>
+                  searchController.value.text.isEmpty ||
+                  searchController.value.text.removeAllWhitespace == '' ||
+                  Tool.removeDiacritics(item.name.toLowerCase()).contains(
+                    Tool.removeDiacritics(
+                      searchController.value.text.toLowerCase(),
+                    ),
+                  ),
+            )
+            .toList();
+    plantConditions.value =
+        homeController.plantConditionViews
+            .where(
+              (item) =>
+                  searchController.value.text.isEmpty ||
+                  searchController.value.text.removeAllWhitespace == '' ||
+                  Tool.removeDiacritics(item.name.toLowerCase()).contains(
+                    Tool.removeDiacritics(
+                      searchController.value.text.toLowerCase(),
+                    ),
+                  ),
+            )
+            .toList();
+    items.value =
+        homeController.imageDetailViews
+            .where(
+              (item) =>
+                  searchController.value.text.isEmpty ||
+                  Tool.removeDiacritics(
+                    item.value.description!.toLowerCase(),
+                  ).contains(
+                    Tool.removeDiacritics(searchController.value.text),
+                  ) ||
+                  plants.value.map((p) => p.id).contains(item.value.idPlant) ||
+                  plantTypes.value
+                      .map((p) => p.id)
+                      .contains(item.value.idPlantType) ||
+                  plantConditions.value
+                      .map((p) => p.id)
+                      .contains(item.value.idCondition),
+            )
+            .toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     HomeController homeController = Get.find<HomeController>();
-    ScrollController _scrollController = ScrollController();
+
+    RxList<Rx<ImageDetail>> items = <Rx<ImageDetail>>[].obs;
+    // List<Rx<ImageDetail>> items = homeController.imageDetailViews;
+    Rx<TextEditingController> searchController = TextEditingController().obs;
+
+    RxList<Plant> plants = <Plant>[].obs;
+    RxList<PlantType> plantTypes = <PlantType>[].obs;
+    RxList<PlantCondition> plantConditions = <PlantCondition>[].obs;
     return Obx(() {
       bool loading = homeController.loading.value;
       bool loadMore = homeController.loadingMore.value;
-      List<Rx<ImageDetail>> items = homeController.imageDetailViews;
+
+      loadData(
+        plants,
+        homeController,
+        searchController,
+        plantTypes,
+        plantConditions,
+        items,
+      );
       return loading
           ? const CircularProgress()
           : NotificationListener(
@@ -47,6 +141,7 @@ class ManagementImageScreen extends StatelessWidget {
                       Container(
                         width: Get.width * 0.7,
                         child: TextField(
+                          controller: searchController.value,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(
@@ -55,12 +150,39 @@ class ManagementImageScreen extends StatelessWidget {
                             ),
                             contentPadding: EdgeInsets.all(10),
                             hintText: 'Tìm kiếm',
+                            prefixIcon: Icon(Icons.search, color: Colors.grey),
+                            suffixIcon: InkWell(
+                              child: Icon(Icons.cancel, color: Colors.grey),
+                              onTap: () {
+                                searchController.value.clear();
 
+                                loadData(
+                                  plants,
+                                  homeController,
+                                  searchController,
+                                  plantTypes,
+                                  plantConditions,
+                                  items,
+                                );
+                              },
+                            ),
                             hintStyle: TextStyle(
                               color: Colors.grey,
                               fontStyle: FontStyle.italic,
                             ),
                           ),
+                          onChanged: (value) {
+                            searchController.value.text = value;
+
+                            loadData(
+                              plants,
+                              homeController,
+                              searchController,
+                              plantTypes,
+                              plantConditions,
+                              items,
+                            );
+                          },
                         ),
                       ),
                       Row(
@@ -85,7 +207,6 @@ class ManagementImageScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-
                 Expanded(
                   child: ListView(
                     children:
@@ -148,7 +269,7 @@ class _Item extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.only(
                 left: Get.width * 0.02,
-                right: Get.width * 0.03,
+                right: Get.width * 0.02,
                 top: Get.width * 0.03,
               ),
               padding: EdgeInsets.only(

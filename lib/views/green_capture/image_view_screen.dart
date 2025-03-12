@@ -14,7 +14,26 @@ class ImageViewScreen extends StatelessWidget {
     final image = Get.arguments['image'];
     final url = Get.arguments['url'];
     return Scaffold(
-      appBar: AppBar(title: const Text("Xem hình ảnh"), centerTitle: true),
+      appBar: AppBar(
+        title: Text(
+          'Xem hình ảnh',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        foregroundColor: Colors.white,
+        flexibleSpace: Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/bg_appbar.png'),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: _Body(image: image, url: url),
     );
   }

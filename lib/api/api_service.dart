@@ -42,14 +42,10 @@ Future<String> postImage(String imageBytes, String fileName) async {
   try {
     var responseData = await dio.post(
       'http://172.16.105.167:1025//predict',
-      data: {
-        'image': imageBytes,
-        'filename': fileName,
-      },
+      data: {'image': imageBytes, 'filename': fileName},
     );
     return responseData.toString();
   } on Exception catch (e) {
-    // TODO
     log('postImage error: $e');
   }
 

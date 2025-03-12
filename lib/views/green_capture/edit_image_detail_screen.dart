@@ -15,7 +15,26 @@ class EditImageDetailScreen extends StatelessWidget {
       EditImageDetailController(imageDetail: imageDetail),
     );
     return Scaffold(
-      appBar: AppBar(title: const Text("Chỉnh sửa thông tin ảnh")),
+      appBar: AppBar(
+        title: Text(
+          'Chỉnh sửa thông tin ảnh',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        foregroundColor: Colors.white,
+        centerTitle: true,
+        flexibleSpace: Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/bg_appbar.png'),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: const _Body(),
       floatingActionButton: FloatingActionButton(
         onPressed: () async => await editImageDetailController.save(),
