@@ -18,6 +18,7 @@ import 'package:smart_farm/widgets/dialog/dialog.dart';
 import 'package:smart_farm/widgets/dialog/dialog_bottom_menu.dart';
 
 class HomeController extends GetxController {
+  static HomeController get to => Get.find<HomeController>();
   RxBool hasInternet = false.obs;
   RxBool loading = false.obs;
   RxBool loadingMore = false.obs;

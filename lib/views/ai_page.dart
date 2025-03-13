@@ -1,4 +1,4 @@
-// ignore_for_file: invalid_use_of_protected_member, unnecessary_null_comparison, sized_box_for_whitespace
+// ignore_for_file: invalid_use_of_protected_member, unnecessary_null_comparison, sized_box_for_whitespace, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,7 +43,7 @@ class AiPage extends StatelessWidget {
                     hintText: 'Nhập câu hỏi',
                     suffixIcon:
                         conversationController.isLoading.value
-                            ? CircularProgress()
+                            ? Container(width: 20, child: CircularProgress())
                             : InkWell(
                               child: Icon(
                                 Icons.send,
@@ -60,7 +60,7 @@ class AiPage extends StatelessWidget {
                                       Conversation(
                                         created_at: DateTime.now(),
                                         question: questionText.value,
-                                        answer: 'Đang xử lý...',
+                                        answer: 'Đang xử lý ',
                                       ).obs;
                                   questionText.value = '';
                                   questionController.value.text = '';
@@ -87,13 +87,52 @@ class AiPage extends StatelessWidget {
                       children: [
                         for (var conversation
                             in conversationController.conversations)
-                          ItemConversation(conversation: conversation),
+                          ItemConversation(
+                            question: Text(
+                              conversation.question,
+                              textAlign: TextAlign.right,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            awser: Row(
+                              children: [
+                                Container(
+                                  width: Get.width * 0.7,
+                                  decoration: BoxDecoration(),
+                                  child: Text(
+                                    conversation.answer,
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ),
+                                // Container(width: 20, child: LoadingDots()),
+                              ],
+                            ),
+                          ),
                         conversationController.currentConver.value.question ==
                                 ''
                             ? SizedBox()
                             : ItemConversation(
-                              conversation:
-                                  conversationController.currentConver.value,
+                              question: Text(
+                                conversationController
+                                    .currentConver
+                                    .value
+                                    .question,
+                                textAlign: TextAlign.right,
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              awser: Row(
+                                children: [
+                                  Container(
+                                    child: Text(
+                                      conversationController
+                                          .currentConver
+                                          .value
+                                          .answer,
+                                      textAlign: TextAlign.left,
+                                    ),
+                                  ),
+                                  Container(width: 20, child: LoadingDots()),
+                                ],
+                              ),
                             ),
                       ],
                     ),
@@ -107,9 +146,15 @@ class AiPage extends StatelessWidget {
 }
 
 class ItemConversation extends StatelessWidget {
-  const ItemConversation({super.key, required this.conversation});
+  const ItemConversation({
+    super.key,
+    required this.question,
+    required this.awser,
+  });
 
-  final Conversation conversation;
+  // final Conversation conversation;
+  final Widget question;
+  final Widget awser;
 
   @override
   Widget build(BuildContext context) {
@@ -128,11 +173,12 @@ class ItemConversation extends StatelessWidget {
                 Container(
                   width: Get.width * 0.75,
                   alignment: Alignment.centerRight,
-                  child: Text(
-                    conversation.question,
-                    textAlign: TextAlign.right,
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+                  child: question,
+                  // Text(
+                  //   conversation.question,
+                  //   textAlign: TextAlign.right,
+                  //   style: TextStyle(fontWeight: FontWeight.bold),
+                  // ),
                 ),
                 Container(
                   padding: EdgeInsets.only(left: 20),
@@ -150,16 +196,30 @@ class ItemConversation extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.only(right: 20),
+                  // width: Get.width * 0.05,
+                  // decoration: BoxDecoration(
+                  //   image: DecorationImage(
+                  //     image: AssetImage('assets/images/logo_ai.png'),
+                  //   ),
+                  // ),
                   child: Icon(Icons.smart_toy_sharp),
                 ),
                 Container(
                   width: Get.width * 0.75,
                   alignment: Alignment.centerLeft,
-                  child: Text(
-                    conversation.answer,
-                    textAlign: TextAlign.left,
-                    // style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+                  child: awser,
+                  // child: Row(
+                  //   children: [
+                  //     Container(
+                  //       width: Get.width * 0.6,
+                  //       child: Text(
+                  //         conversation.answer,
+                  //         textAlign: TextAlign.left,
+                  //       ),
+                  //     ),
+                  //     Container(width: 20, child: LoadingDots()),
+                  //   ],
+                  // ),
                 ),
               ],
             ),

@@ -6,7 +6,7 @@ import 'package:smart_farm/views/ai_page.dart';
 import 'package:smart_farm/views/data_page.dart';
 import 'package:smart_farm/views/home_page.dart';
 import 'package:smart_farm/views/newspaper_page.dart';
-import 'package:smart_farm/views/smart_farm/picture_page.dart';
+import 'package:smart_farm/views/picture_page.dart';
 import 'package:image_picker/image_picker.dart';
 
 class MainController extends GetxController {

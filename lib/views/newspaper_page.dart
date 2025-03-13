@@ -43,71 +43,77 @@ class NewsPaperPage extends StatelessWidget {
                 children:
                     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                         .map(
-                          (e) => Container(
-                            margin: EdgeInsets.only(
-                              left: Get.width * 0.02,
-                              right: Get.width * 0.02,
-                              top: Get.width * 0.03,
-                            ),
-                            padding: EdgeInsets.only(
-                              left: Get.width * 0.02,
-                              right: Get.width * 0.02,
-                              top: Get.width * 0.02,
-                              bottom: Get.width * 0.02,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
+                          (e) => InkWell(
+                            onTap: () {
+                              Get.toNamed('/new-detail');
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                left: Get.width * 0.02,
+                                right: Get.width * 0.02,
+                                top: Get.width * 0.03,
                               ),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  width: Get.width * 0.2,
-                                  height: Get.width * 0.25,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                        'https://picsum.photos/200/300',
+                              padding: EdgeInsets.only(
+                                left: Get.width * 0.02,
+                                right: Get.width * 0.02,
+                                top: Get.width * 0.02,
+                                bottom: Get.width * 0.02,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(20),
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: Get.width * 0.2,
+                                    height: Get.width * 0.25,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          'https://picsum.photos/200/300',
+                                        ),
+                                        fit: BoxFit.cover,
                                       ),
-                                      fit: BoxFit.cover,
-                                    ),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(10),
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(10),
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Container(
-                                  width: Get.width * 0.675,
-                                  decoration: BoxDecoration(),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Binh thuan huong dan nong dan tru sau hai cay trong',
-                                        maxLines: 2,
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
+                                  Container(
+                                    width: Get.width * 0.675,
+                                    decoration: BoxDecoration(),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Binh thuan huong dan nong dan tru sau hai cay trong',
+                                          maxLines: 2,
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        'Chi cục Trồng trọt và BVTV Bình Thuận khuyến cáo nông dân thăm đồng thường xuyên, phát hiện các loại dịch hại sớm để có biện pháp xử lý kịp thời.',
-                                        maxLines: 3,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.justify,
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.grey,
+                                        Text(
+                                          'Chi cục Trồng trọt và BVTV Bình Thuận khuyến cáo nông dân thăm đồng thường xuyên, phát hiện các loại dịch hại sớm để có biện pháp xử lý kịp thời.',
+                                          maxLines: 3,
+                                          overflow: TextOverflow.ellipsis,
+                                          textAlign: TextAlign.justify,
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.grey,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         )

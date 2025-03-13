@@ -20,21 +20,30 @@ class AddDataScreen extends StatelessWidget {
       List<Rx<UploadObj>> itemsUploadObj = imageManagementController.uploadObjs;
       return loading
           ? const CircularProgress()
-          : ListView.separated(
-            physics: const BouncingScrollPhysics(),
-            itemBuilder: (context, index) {
-              if (index == 0) {
-                return const _ButtonAdd();
-              } else {
-                return _Item(
-                  item: items[index - 1],
-                  index: index,
-                  uploadObj: itemsUploadObj[index - 1],
-                );
-              }
-            },
-            separatorBuilder: separatorBuilder,
-            itemCount: items.length + 1,
+          : Scaffold(
+            backgroundColor: Colors.grey[100],
+            body: ListView.separated(
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return const _ButtonAdd();
+                } else {
+                  return _Item(
+                    item: items[index - 1],
+                    index: index,
+                    uploadObj: itemsUploadObj[index - 1],
+                  );
+                }
+              },
+              separatorBuilder: separatorBuilder,
+              itemCount: items.length + 1,
+            ),
+            floatingActionButton: ElevatedButton.icon(
+              onPressed:
+                  () async => await imageManagementController.uploadAllImage(),
+              icon: Icon(Icons.cloud_upload_rounded),
+              label: Text('Up lên server'),
+            ),
           );
     });
   }

@@ -93,6 +93,7 @@ class ManagementImageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(HomeController());
     HomeController homeController = Get.find<HomeController>();
 
     RxList<Rx<ImageDetail>> items = <Rx<ImageDetail>>[].obs;

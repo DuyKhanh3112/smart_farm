@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/controller/green_capture/home_controller.dart';
 import 'package:smart_farm/controller/green_capture/image_management_controller.dart';
 import 'package:smart_farm/views/data_views/add_data_screen.dart';
 import 'package:smart_farm/views/data_views/management_image_screen.dart';
@@ -12,14 +11,15 @@ class DataPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(ImageManagementController());
-    Get.put(HomeController());
+    // Get.put(HomeController());
     ImageManagementController imageManagementController =
         Get.find<ImageManagementController>();
-    HomeController homeController = Get.find<HomeController>();
+    // HomeController homeController = Get.find<HomeController>();
 
     return Obx(() {
-      return imageManagementController.loading.value ||
-              homeController.loading.value
+      return imageManagementController.loading.value
+          //  ||
+          //         homeController.loading.value
           ? const CircularProgress()
           : DefaultTabController(
             length: 2,
