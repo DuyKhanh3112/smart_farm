@@ -140,7 +140,7 @@ class HomeController extends GetxController {
       if (result) {
         imageDetailViews.removeAt(index);
         Fluttertoast.showToast(msg: "Đã xóa");
-        Get.back();
+        // Get.back();
       }
     }
   }

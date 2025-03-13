@@ -72,7 +72,7 @@ class ImageManagementController extends GetxController {
 
       if (checkDelete) {
         await ImageService().deleteImageLocal(item);
-        await getImages();
+        await reload();
       }
     }
     update();
@@ -91,7 +91,7 @@ class ImageManagementController extends GetxController {
             await ImageService().deleteImageLocal(item);
           }
         }
-        Get.back();
+        // Get.back();
       } else {
         uploadedViews.value = [];
       }
@@ -252,7 +252,7 @@ class ImageManagementController extends GetxController {
             .map((e) => PlantCondition.fromJson(jsonDecode(jsonEncode(e))))
             .toList();
 
-    await getImages();
+    await reload();
     loading.value = false;
   }
 

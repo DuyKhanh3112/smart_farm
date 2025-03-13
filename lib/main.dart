@@ -26,11 +26,11 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
       theme: ThemeApp.themeData(),
       debugShowCheckedModeBanner: false,
-      initialRoute: "/",
+      initialRoute: "/start",
       initialBinding: InitialBindings(),
       getPages: [
         GetPage(
-          name: "/",
+          name: "/start",
           // page: () => const HomeScreen(),
           page: () => const StartPage(),
         ),
@@ -39,7 +39,7 @@ class MainApp extends StatelessWidget {
           page: () => const PicturePage(),
           transition: Transition.noTransition,
         ),
-        GetPage(name: '/main', page: () => const MainPage()),
+        GetPage(name: '/', page: () => const MainPage()),
         GetPage(name: '/home', page: () => const HomePage()),
         // GetPage(name: '/smart_farm', page: () => const GreenCapturePage()),
         GetPage(name: "/add-image", page: () => const AddImageScreen()),

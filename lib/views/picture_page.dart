@@ -54,7 +54,7 @@ class PicturePage extends StatelessWidget {
       // Get.find<MainController>().result.value = [];
       Get.find<MainController>().listImageDetect.value = [];
       Get.find<MainController>().clickDetect.value = false;
-      Get.back();
+      // Get.back();
     }
   }
 

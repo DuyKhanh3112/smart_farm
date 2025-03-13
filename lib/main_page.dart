@@ -9,7 +9,7 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(MainController());
+    // Get.put(MainController());
     Get.put(ConversationController());
     MainController mainController = Get.find<MainController>();
     ConversationController conversationController =
@@ -77,6 +77,7 @@ class MainPage extends StatelessWidget {
             mainController.titles[mainController.numPage.value],
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
+          automaticallyImplyLeading: false, // Ẩn nút back
           foregroundColor: Colors.white,
           centerTitle: true,
           flexibleSpace: Stack(

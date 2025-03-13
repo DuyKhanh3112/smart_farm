@@ -28,10 +28,7 @@ Future<bool> dialogConfirm({
       title: Text(title ?? "Xác nhận"),
       content: Text(content),
       actions: [
-        TextButton(
-          onPressed: () => Get.back(),
-          child: Text(cancel ?? "Hủy"),
-        ),
+        TextButton(onPressed: () => Get.back(), child: Text(cancel ?? "Hủy")),
         TextButton(
           onPressed: () async {
             result = true;
@@ -45,8 +42,11 @@ Future<bool> dialogConfirm({
   return result;
 }
 
-dialogNotification(
-    {String? message, required String content, Function? accept}) async {
+dialogNotification({
+  String? message,
+  required String content,
+  Function? accept,
+}) async {
   Get.dialog(
     AlertDialog(
       title: Text(message ?? "Thông báo"),
@@ -59,10 +59,7 @@ dialogNotification(
             }
             Get.back();
           },
-          child: const Text(
-            "OK",
-            style: TextStyle(color: Colors.red),
-          ),
+          child: const Text("OK", style: TextStyle(color: Colors.red)),
         ),
       ],
     ),

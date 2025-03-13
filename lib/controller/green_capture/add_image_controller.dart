@@ -32,7 +32,7 @@ class AddImageController extends GetxController {
     bool pCamera = await PermissionAppService().requestPermissionCamera();
     if (!pStorage && !pCamera) {
       Fluttertoast.showToast(msg: "Vui lòng cấp quyền để sử dụng ứng dụng");
-      Get.back();
+      // Get.back();
     }
   }
 
@@ -103,7 +103,7 @@ class AddImageController extends GetxController {
       if (result) {
         Fluttertoast.showToast(msg: "Đã lưu hình ảnh vào bộ nhớ cục bộ");
         await Get.find<ImageManagementController>().reload();
-        Get.back();
+        // Get.back();
       }
     }
   }
