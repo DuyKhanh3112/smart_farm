@@ -103,7 +103,7 @@ class AddImageController extends GetxController {
       if (result) {
         Fluttertoast.showToast(msg: "Đã lưu hình ảnh vào bộ nhớ cục bộ");
         await Get.find<ImageManagementController>().reload();
-        // Get.back();
+        Get.back();
       }
     }
   }
