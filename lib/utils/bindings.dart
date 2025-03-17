@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:smart_farm/controller/green_capture/home_controller.dart';
-import 'package:smart_farm/controller/main_controller.dart';
+import 'package:farm_ai/controller/green_capture/home_controller.dart';
+import 'package:farm_ai/controller/main_controller.dart';
 
 class InitialBindings extends Bindings {
   @override

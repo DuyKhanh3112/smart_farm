@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:smart_farm/controller/main_controller.dart';
+import 'package:farm_ai/controller/main_controller.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

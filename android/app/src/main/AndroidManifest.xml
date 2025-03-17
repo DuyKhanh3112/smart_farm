@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
     <application
-        android:label="smart_farm"
+        android:label="farm_ai"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

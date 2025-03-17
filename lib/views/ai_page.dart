@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/controller/conversation_controller.dart';
-import 'package:smart_farm/objs/conversation.dart';
-import 'package:smart_farm/widgets/progress.dart';
+import 'package:farm_ai/controller/conversation_controller.dart';
+import 'package:farm_ai/objs/conversation.dart';
+import 'package:farm_ai/widgets/progress.dart';
 
 class AiPage extends StatelessWidget {
   const AiPage({super.key});

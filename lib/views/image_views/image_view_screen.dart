@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/utils/config.dart';
-import 'package:smart_farm/widgets/progress.dart';
+import 'package:farm_ai/utils/config.dart';
+import 'package:farm_ai/widgets/progress.dart';
 import 'package:photo_view/photo_view.dart';
 
 class ImageViewScreen extends StatelessWidget {

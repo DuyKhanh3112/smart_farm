@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/controller/conversation_controller.dart';
-import 'package:smart_farm/controller/main_controller.dart';
-import 'package:smart_farm/objs/conversation.dart';
+import 'package:farm_ai/controller/conversation_controller.dart';
+import 'package:farm_ai/controller/main_controller.dart';
+import 'package:farm_ai/objs/conversation.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -135,13 +135,37 @@ class MainPage extends StatelessWidget {
           currentIndex: mainController.numPage.value,
           showSelectedLabels: true,
           showUnselectedLabels: true,
-          // selectedIconTheme: IconThemeData(color: Colors.green, size: 28),
+          // selectedIconTheme: IconThemeData(color: Colors.green, size: 24),
           selectedItemColor: Colors.green,
           // unselectedIconTheme: IconThemeData(color: Colors.grey, size: 20),
           unselectedItemColor: Colors.grey,
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Trang chủ'),
-            BottomNavigationBarItem(icon: Icon(Icons.folder), label: 'Dữ liêu'),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'assets/images/home_unselect.png',
+                width: 24,
+                height: 24,
+              ),
+              activeIcon: Image.asset(
+                'assets/images/home_selected.png',
+                width: 24,
+                height: 24,
+              ),
+              label: 'Trang chủ',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'assets/images/data_unselect.png',
+                width: 24,
+                height: 24,
+              ),
+              activeIcon: Image.asset(
+                'assets/images/data_selected.png',
+                width: 24,
+                height: 24,
+              ),
+              label: 'Dữ liêu',
+            ),
             BottomNavigationBarItem(
               // icon: Icon(Icons.photo_camera_back_rounded, size: 30),
               icon: Container(
@@ -156,22 +180,34 @@ class MainPage extends StatelessWidget {
                     fit: BoxFit.fill,
                   ),
                 ),
-
                 padding: EdgeInsets.all(10),
-                // child: Icon(
-                //   Icons.photo_camera_back_rounded,
-                //   color: Colors.white,
-                //   size: 30,
-                // ),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.newspaper),
+              icon: Image.asset(
+                'assets/images/news_unselect.png',
+                width: 24,
+                height: 24,
+              ),
+              activeIcon: Image.asset(
+                'assets/images/news_selected.png',
+                width: 24,
+                height: 24,
+              ),
               label: 'Tin tức',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.smart_toy),
+              icon: Image.asset(
+                'assets/images/ai_unselect.png',
+                width: 24,
+                height: 24,
+              ),
+              activeIcon: Image.asset(
+                'assets/images/ai_selected.png',
+                width: 24,
+                height: 24,
+              ),
               label: 'Hỏi AI',
             ),
           ],

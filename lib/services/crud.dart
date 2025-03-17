@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:smart_farm/utils/config.dart';
-import 'package:smart_farm/utils/init.dart';
-import 'package:smart_farm/utils/tool.dart';
+import 'package:farm_ai/utils/config.dart';
+import 'package:farm_ai/utils/init.dart';
+import 'package:farm_ai/utils/tool.dart';
 
 class CrudService {
   Future<List<Map<String, dynamic>>> getDatas(

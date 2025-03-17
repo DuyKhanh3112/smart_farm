@@ -3,15 +3,15 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/objs/image_local.dart';
-import 'package:smart_farm/objs/plant.dart';
-import 'package:smart_farm/objs/upload_obj.dart';
-import 'package:smart_farm/objs/upload_response.dart';
-import 'package:smart_farm/services/image.dart';
-import 'package:smart_farm/services/local_storage.dart';
-import 'package:smart_farm/utils/config.dart';
-import 'package:smart_farm/widgets/dialog/dialog.dart';
-import 'package:smart_farm/widgets/dialog/dialog_bottom_menu.dart';
+import 'package:farm_ai/objs/image_local.dart';
+import 'package:farm_ai/objs/plant.dart';
+import 'package:farm_ai/objs/upload_obj.dart';
+import 'package:farm_ai/objs/upload_response.dart';
+import 'package:farm_ai/services/image.dart';
+import 'package:farm_ai/services/local_storage.dart';
+import 'package:farm_ai/utils/config.dart';
+import 'package:farm_ai/widgets/dialog/dialog.dart';
+import 'package:farm_ai/widgets/dialog/dialog_bottom_menu.dart';
 
 class ImageManagementController extends GetxController {
   RxBool loading = false.obs;

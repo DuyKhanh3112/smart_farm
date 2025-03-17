@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/widgets/progress.dart';
+import 'package:farm_ai/widgets/progress.dart';
 
 class ImageNetwork extends StatelessWidget {
   final String url;

@@ -5,12 +5,12 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/objs/app_version.dart';
-import 'package:smart_farm/services/crud.dart';
-import 'package:smart_farm/utils/config.dart';
-import 'package:smart_farm/utils/init.dart';
-import 'package:smart_farm/utils/tool.dart';
-import 'package:smart_farm/widgets/dialog/dialog.dart';
+import 'package:farm_ai/objs/app_version.dart';
+import 'package:farm_ai/services/crud.dart';
+import 'package:farm_ai/utils/config.dart';
+import 'package:farm_ai/utils/init.dart';
+import 'package:farm_ai/utils/tool.dart';
+import 'package:farm_ai/widgets/dialog/dialog.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';

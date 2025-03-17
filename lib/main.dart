@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/main_page.dart';
-import 'package:smart_farm/utils/bindings.dart';
-import 'package:smart_farm/views/ai_page.dart';
-import 'package:smart_farm/views/image_views/add_image_page.dart';
-import 'package:smart_farm/views/image_views/edit_image_detail_screen.dart';
-import 'package:smart_farm/views/image_views/image_view_screen.dart';
-import 'package:smart_farm/theme.dart';
-import 'package:smart_farm/utils/init.dart';
-import 'package:smart_farm/views/home_page.dart';
-import 'package:smart_farm/views/news_view/news_details_page.dart';
-import 'package:smart_farm/views/picture_page.dart';
-import 'package:smart_farm/widgets/start_page.dart';
+import 'package:farm_ai/main_page.dart';
+import 'package:farm_ai/utils/bindings.dart';
+import 'package:farm_ai/views/ai_page.dart';
+import 'package:farm_ai/views/image_views/add_image_page.dart';
+import 'package:farm_ai/views/image_views/edit_image_detail_screen.dart';
+import 'package:farm_ai/views/image_views/image_view_screen.dart';
+import 'package:farm_ai/theme.dart';
+import 'package:farm_ai/utils/init.dart';
+import 'package:farm_ai/views/home_page.dart';
+import 'package:farm_ai/views/news_view/news_details_page.dart';
+import 'package:farm_ai/views/picture_page.dart';
+import 'package:farm_ai/widgets/start_page.dart';
 
 void main() async {
   await init();

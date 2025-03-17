@@ -6,12 +6,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/api/api_service.dart';
-import 'package:smart_farm/config/app_colors.dart';
-import 'package:smart_farm/controller/main_controller.dart';
-import 'package:smart_farm/objs/image_detect.dart';
-import 'package:smart_farm/utils/tool.dart';
-import 'package:smart_farm/widgets/customWidget.dart';
+import 'package:farm_ai/api/api_service.dart';
+import 'package:farm_ai/config/app_colors.dart';
+import 'package:farm_ai/controller/main_controller.dart';
+import 'package:farm_ai/objs/image_detect.dart';
+import 'package:farm_ai/utils/tool.dart';
+import 'package:farm_ai/widgets/customWidget.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 

@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:get/get.dart';
-import 'package:smart_farm/objs/conversation.dart';
+import 'package:farm_ai/objs/conversation.dart';
 import 'package:dio/dio.dart';
 
 class ConversationController extends GetxController {

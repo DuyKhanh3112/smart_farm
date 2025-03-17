@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/theme.dart';
-import 'package:smart_farm/widgets/dialog/dialog.dart';
+import 'package:farm_ai/theme.dart';
+import 'package:farm_ai/widgets/dialog/dialog.dart';
 
 class DialogBottomMenuItem {
   final Widget? icon;

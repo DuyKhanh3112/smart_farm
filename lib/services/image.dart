@@ -4,13 +4,13 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:smart_farm/objs/image.dart';
-import 'package:smart_farm/objs/image_local.dart';
-import 'package:smart_farm/objs/upload_response.dart';
-import 'package:smart_farm/services/local_storage.dart';
-import 'package:smart_farm/utils/config.dart';
-import 'package:smart_farm/utils/init.dart';
-import 'package:smart_farm/utils/tool.dart';
+import 'package:farm_ai/objs/image.dart';
+import 'package:farm_ai/objs/image_local.dart';
+import 'package:farm_ai/objs/upload_response.dart';
+import 'package:farm_ai/services/local_storage.dart';
+import 'package:farm_ai/utils/config.dart';
+import 'package:farm_ai/utils/init.dart';
+import 'package:farm_ai/utils/tool.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'package:http_parser/http_parser.dart' as http_parser;

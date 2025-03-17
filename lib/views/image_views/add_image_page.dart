@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/objs/plant.dart';
-import 'package:smart_farm/controller/green_capture/add_image_controller.dart';
-import 'package:smart_farm/widgets/progress.dart';
+import 'package:farm_ai/objs/plant.dart';
+import 'package:farm_ai/controller/green_capture/add_image_controller.dart';
+import 'package:farm_ai/widgets/progress.dart';
 
 class AddImageScreen extends StatelessWidget {
   const AddImageScreen({super.key});

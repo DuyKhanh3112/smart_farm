@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/objs/image_local.dart';
-import 'package:smart_farm/objs/plant.dart';
-import 'package:smart_farm/objs/upload_obj.dart';
-import 'package:smart_farm/controller/green_capture/image_management_controller.dart';
-import 'package:smart_farm/widgets/progress.dart';
-import 'package:smart_farm/widgets/widgets.dart';
+import 'package:farm_ai/objs/image_local.dart';
+import 'package:farm_ai/objs/plant.dart';
+import 'package:farm_ai/objs/upload_obj.dart';
+import 'package:farm_ai/controller/green_capture/image_management_controller.dart';
+import 'package:farm_ai/widgets/progress.dart';
+import 'package:farm_ai/widgets/widgets.dart';
 
 class AddDataScreen extends StatelessWidget {
   const AddDataScreen({super.key});

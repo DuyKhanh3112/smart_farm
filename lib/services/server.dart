@@ -4,11 +4,11 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:smart_farm/services/crud.dart';
-import 'package:smart_farm/services/local_storage.dart';
-import 'package:smart_farm/utils/config.dart';
-import 'package:smart_farm/utils/init.dart';
-import 'package:smart_farm/utils/tool.dart';
+import 'package:farm_ai/services/crud.dart';
+import 'package:farm_ai/services/local_storage.dart';
+import 'package:farm_ai/utils/config.dart';
+import 'package:farm_ai/utils/init.dart';
+import 'package:farm_ai/utils/tool.dart';
 
 class ServerService {
   Future<bool> checkInternet() async {

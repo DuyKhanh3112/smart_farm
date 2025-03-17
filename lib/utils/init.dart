@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:smart_farm/utils/config.dart';
+import 'package:farm_ai/utils/config.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 

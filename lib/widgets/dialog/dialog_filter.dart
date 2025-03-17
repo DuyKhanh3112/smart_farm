@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/objs/plant.dart';
-import 'package:smart_farm/controller/green_capture/home_controller.dart';
-import 'package:smart_farm/theme.dart';
-import 'package:smart_farm/widgets/dialog/dialog_date_picker_range.dart';
+import 'package:farm_ai/objs/plant.dart';
+import 'package:farm_ai/controller/green_capture/home_controller.dart';
+import 'package:farm_ai/theme.dart';
+import 'package:farm_ai/widgets/dialog/dialog_date_picker_range.dart';
 import 'package:intl/intl.dart';
 
 dialogFilterImages() async {

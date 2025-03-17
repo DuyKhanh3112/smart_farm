@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/config/app_colors.dart';
+import 'package:farm_ai/config/app_colors.dart';
 
 class CustomWidget {
   CustomWidget._();

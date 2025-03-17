@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/objs/image.dart';
-import 'package:smart_farm/objs/plant.dart';
-import 'package:smart_farm/controller/green_capture/home_controller.dart';
-import 'package:smart_farm/utils/config.dart';
-import 'package:smart_farm/utils/tool.dart';
-import 'package:smart_farm/widgets/dialog/dialog_filter.dart';
-import 'package:smart_farm/widgets/progress.dart';
+import 'package:farm_ai/objs/image.dart';
+import 'package:farm_ai/objs/plant.dart';
+import 'package:farm_ai/controller/green_capture/home_controller.dart';
+import 'package:farm_ai/utils/config.dart';
+import 'package:farm_ai/utils/tool.dart';
+import 'package:farm_ai/widgets/dialog/dialog_filter.dart';
+import 'package:farm_ai/widgets/progress.dart';
 import 'package:intl/intl.dart';
 
 class ManagementImageScreen extends StatelessWidget {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_farm/objs/conversation.dart';
-import 'package:smart_farm/objs/image_detect.dart';
-import 'package:smart_farm/views/ai_page.dart';
-import 'package:smart_farm/views/data_page.dart';
-import 'package:smart_farm/views/home_page.dart';
-import 'package:smart_farm/views/newspaper_page.dart';
-import 'package:smart_farm/views/picture_page.dart';
+import 'package:farm_ai/objs/conversation.dart';
+import 'package:farm_ai/objs/image_detect.dart';
+import 'package:farm_ai/views/ai_page.dart';
+import 'package:farm_ai/views/data_page.dart';
+import 'package:farm_ai/views/home_page.dart';
+import 'package:farm_ai/views/newspaper_page.dart';
+import 'package:farm_ai/views/picture_page.dart';
 import 'package:image_picker/image_picker.dart';
 
 class MainController extends GetxController {
