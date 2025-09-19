@@ -15,10 +15,11 @@ class ConversationController extends GetxController {
 
     try {
       final url =
-          'https://n8n.seateklab.vn/webhook/9ff11ec9-80d1-414a-bf68-668e52729342';
+          'https://n8n.seateklab.vn/webhook/d48f9e07-3c05-4be8-86ca-5cee4c27b78f/chat';
+      // 'https://n8n.seateklab.vn/webhook/9ff11ec9-80d1-414a-bf68-668e52729342';
       final requestBody = {
-        "user_id": "12345",
-        "question": currentConver.value.question,
+        "sessionId": "12345",
+        "chatInput": currentConver.value.question,
       };
       var response = await Dio().post(url, data: requestBody);
       var data = await response.data;

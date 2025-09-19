@@ -139,6 +139,7 @@ class MainPage extends StatelessWidget {
           selectedItemColor: Colors.green,
           // unselectedIconTheme: IconThemeData(color: Colors.grey, size: 20),
           unselectedItemColor: Colors.grey,
+          type: BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(
               icon: Image.asset(
@@ -167,7 +168,6 @@ class MainPage extends StatelessWidget {
               label: 'Dữ liêu',
             ),
             BottomNavigationBarItem(
-              // icon: Icon(Icons.photo_camera_back_rounded, size: 30),
               icon: Container(
                 width: Get.width * 0.2,
                 height: Get.width * 0.2,
@@ -176,7 +176,6 @@ class MainPage extends StatelessWidget {
                   color: Colors.green,
                   image: DecorationImage(
                     image: AssetImage('assets/images/scan_image.png'),
-
                     fit: BoxFit.fill,
                   ),
                 ),
